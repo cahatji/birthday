@@ -1,0 +1,249 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+  background-size: 400% 400%;
+  animation: gradientAnimation 8s ease infinite;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.envelope {
+  position: relative;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.back {
+  position: relative;
+  width: 250px;
+  height: 200px;
+  background: #6247aa;
+  border-radius: 5px;
+}
+
+.front {
+  position: absolute;
+  border-right: 130px solid #815ac0;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 120px;
+  z-index: 3;
+  border-radius: 5px;
+}
+
+.front:before {
+  content: "";
+  position: absolute;
+  border-left: 130px solid #815ac0;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  height: 0;
+  width: 0;
+  top: -100px;
+  left: -120px;
+}
+
+.front:after {
+  content: "";
+  position: absolute;
+  border-bottom: 105px solid #7251b5;
+  border-left: 125px solid transparent;
+  border-right: 125px solid transparent;
+  height: 0;
+  width: 0;
+  top: -5px;
+  left: -120px;
+}
+
+.top {
+  position: absolute;
+  border-top: 105px solid #9163cb;
+  border-left: 125px solid transparent;
+  border-right: 125px solid transparent;
+  height: 0;
+  width: 0;
+  top: 0;
+  transform-origin: top;
+  transition: 0.6s ease;
+}
+
+.envelope:hover .top {
+  transform: rotateX(160deg);
+}
+
+.letter {
+  position: absolute;
+  background: white;
+  width: 230px;
+  height: 180px;
+  top: 10px;
+  left: 10px;
+  transition: transform 0.4s ease, z-index 0.4s ease;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.envelope:hover .letter {
+  transform: translateY(-110px);
+  z-index: 2;
+}
+
+.text1 {
+  position: absolute;
+  color: white;
+  font-family: sans-serif;
+  top: -50%;
+  font-size: 18px;
+}
+
+.text {
+  text-align: center;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+  font-weight: bold;
+  color: black;
+  position: relative;
+  top: -20px;
+  left: 20px;
+}
+
+/* Heart Styling */
+.heart {
+  background-color: #ff6f91;
+  height: 70px;
+  width: 70px;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  transform: rotate(-45deg);
+  box-shadow: -5px 10px 90px #ff6f91;
+  animation: heartBeat 1.2s linear infinite;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: rotate(-45deg) scale(1.05);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
+}
+
+.heart:before {
+  content: "";
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background-color: #ff6f91;
+  top: -40px;
+  border-radius: 50px;
+}
+
+.heart:after {
+  content: "";
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background-color: #ff6f91;
+  right: -40px;
+  border-radius: 50px;
+}
+
+
+/* Styles for "Click here" link */
+.link-container {
+  text-align: center;
+  margin-top: 20px; /* Space below the envelope */
+}
+
+.link-container a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #ff6f91;
+  border: 2px solid #ff6f91;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.link-container a:hover {
+  background-color: #ff6f91;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(255, 111, 145, 0.5);
+}
+
+
+/* General body styling */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+  background-size: 400% 400%;
+  animation: gradientAnimation 8s ease infinite;
+  position: relative;
+}
+
+/* Gradient animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Envelope styles remain unchanged */
+/* ... (Envelope styles here) ... */
+
+/* Styles for the bottom "Click here" link */
+.bottom-link {
+  position: absolute;
+  bottom: 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #ff6f91;
+  border: 2px solid #ff6f91;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.bottom-link:hover {
+  background-color: #ff6f91;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(255, 111, 145, 0.5);
+}
